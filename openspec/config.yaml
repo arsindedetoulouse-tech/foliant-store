@@ -1,0 +1,58 @@
+schema: spec-driven
+context: |
+  Foliant Book Store is an ordinary multi-module Android application skeleton.
+  It is not Flex Kiosk App and has no kiosk/DPC/device-owner requirement.
+  Follow AGENTS.md, SECURITY.md and applicable .agents/skills/<role>/SKILL.md.
+  Read ROADMAP.md for current priorities, readiness, dependencies and active links.
+  Keep it a short rolling plan: remove completed outcomes after preserving
+  evidence in authoritative artifacts, and add only material next outcomes.
+  Detailed tasks remain in the scoped change. Roadmap entries do not authorize
+  implementation.
+  Security constraints cannot be overridden by an OpenSpec artifact or role.
+  Stack: Kotlin, Compose, Orbit MVI, Koin, Ktor, Kotlin Serialization,
+  Navigation 3, Gradle Kotlin DSL and build-logic convention plugins.
+  JVM compile target is 21; read SDK/toolchain values from the conventions.
+  Gradle daemon JVM requirements are separate from the compilation target.
+  Dependencies belong in gradle/libs.versions.toml and existing conventions.
+  app assembles Application/Activity and application DI; app/navigation owns
+  start/top-level routes and entry-provider composition.
+  feature/* implements features; feature/*-api contains public contracts.
+  common/{domain,data,presentation,testing} and core/{network,datastore,
+  navigation,designsystem} provide shared layers and infrastructure.
+  Preserve presentation -> domain and data -> domain. Keep domain independent
+  of Android UI/network/persistence infrastructure; no DTO/entity leakage.
+  Composition-root DI may reference implementations; UI/ViewModels may not.
+  Use Route/Screen separation, immutable Orbit state and one-time effects.
+  Supported locales: ru-RU and uz-Latn-UZ; default resources remain valid.
+  Current locale qualifiers: values-b+ru+RU and values-b+uz+Latn+UZ.
+  Home currently reads a JSON asset and caches an ID; it is not a backend.
+  Home translations are incomplete. No production auth, ApiErrorResponse,
+  approved secret-storage contract or custom test helpers are implemented.
+  common:testing currently exports test dependencies. Use module conventions.
+  Do not silently turn demonstrator behavior into production requirements.
+  Non-trivial changes need agreed OpenSpec scope before implementation.
+  Clarify material product/security/compatibility ambiguity with the owner.
+  Seven roles are procedures, not a mandate to spawn seven agents.
+  Behavior-changing work uses TDD; independent review follows verification.
+  Security-sensitive work additionally requires independent security review.
+rules:
+  proposal:
+    - State observable outcomes, non-goals, affected modules and compatibility.
+    - Separate verified existing behavior, agreed requirements and proposals.
+    - Resolve material scope/behavior ambiguity with the owner before applying.
+    - Do not invent product delta specs for documentation-only changes.
+  specs:
+    - Describe observable behavior and meaningful success/error/edge scenarios.
+    - Keep implementation classes, libraries and task steps out of requirements.
+    - Include localization and protected-data constraints where applicable.
+  design:
+    - Inspect actual modules/dependencies and reuse established abstractions.
+    - Identify layer ownership, contracts, DI lifetime and migration impacts.
+    - Assess security-sensitive impact without assuming missing controls exist.
+    - Record alternatives, chosen trade-offs and unresolved owner decisions.
+  tasks:
+    - Map tasks to acceptance criteria and state verifiable completion evidence.
+    - For behavior changes put failing focused tests before implementation.
+    - Include relevant tests/docs with each implementation group.
+    - Include independent review and security review when applicable.
+    - Record blocked or inapplicable checks honestly; never imply they passed.

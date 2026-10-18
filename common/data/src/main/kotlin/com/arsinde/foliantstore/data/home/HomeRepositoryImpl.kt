@@ -1,0 +1,16 @@
+package com.arsinde.foliantstore.data.home
+
+import com.arsinde.foliantstore.domain.home.HomeModel
+import com.arsinde.foliantstore.domain.home.HomeRepository
+
+class HomeRepositoryImpl(
+    private val dataSource: HomeDataSource,
+) : HomeRepository {
+    override suspend fun load(): HomeModel? {
+        return runCatching {
+            dataSource.loadRemote().also { dataSource.saveLocal(it) }
+        }.getOrElse {
+            dataSource.loadLocal() ?: throw it
+        }
+    }
+}

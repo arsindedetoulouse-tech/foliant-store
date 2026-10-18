@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cli_version": "0.3.0",
+  "template_version": "1.2.0",
+  "project_name": "Foliant Book Store",
+  "package_name": "com.arsinde.foliantstore",
+  "application_id": "com.arsinde.foliantstore",
+  "options": {
+    "network": true,
+    "locales": [
+      "ru-RU",
+      "uz-Latn-UZ"
+    ]
+  },
+  "features": [
+    "home"
+  ]
+}

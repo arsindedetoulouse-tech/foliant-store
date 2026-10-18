@@ -1,0 +1,17 @@
+.gradle/
+.idea/
+build/
+**/build/
+local.properties
+*.iml
+
+# Local signing credentials and private keys
+*.jks
+*.keystore
+*.p12
+*.pfx
+key.properties
+signing.properties
+playstore_account.json
+service-account*.json
+private-key*.pem
