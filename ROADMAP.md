@@ -23,8 +23,8 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 ## Current position
 
-- The next outcome is **R4**. It can be planned independently; no CI baseline
-  change is active yet.
+- **R4 is in progress** in
+  [add-github-actions-gates](openspec/changes/add-github-actions-gates/proposal.md).
 
 ## Plan
 
@@ -34,7 +34,7 @@ dependencies. Product discovery in R5 may run in parallel with engineering work.
 
 | ID | Outcome | Status | Prerequisites | Completion evidence |
 |---|---|---|---|---|
-| R4 | Minimal automated gates | planned | Safe versioned baseline | Successful CI run verifies its agreed gate set. |
+| R4 | Minimal automated gates | in_progress | Safe versioned baseline | Successful CI run verifies its agreed gate set. |
 | R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R4 | Owner-approved product change with testable acceptance criteria. |
 
 ## Status and maintenance protocol
