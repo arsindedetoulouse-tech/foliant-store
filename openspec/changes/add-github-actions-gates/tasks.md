@@ -10,4 +10,4 @@
 - [x] 2.1 Validate workflow structure and local Gradle/OpenSpec commands; record the initial GitHub setup failure in the design evidence.
 - [x] 2.2 Independently security-review workflow permissions, action usage and supply-chain exposure.
 - [x] 2.3 Independently review the change; update R4 only after review and remote-run status is accurately recorded.
-- [ ] 2.4 Install the owner-approved SDK 37.2 Canary package required by compileSdk 37 and verify a successful GitHub run.
+- [x] 2.4 Install the owner-approved SDK 37.2 Canary package required by compileSdk 37 and verify successful [GitHub run 39110515698](https://github.com/arsindedetoulouse-tech/foliant-store/actions/runs/39110515698).

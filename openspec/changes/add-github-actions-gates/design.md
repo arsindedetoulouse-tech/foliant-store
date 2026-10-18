@@ -53,15 +53,15 @@ the action default requested the retired `tools` package. All later gates were
 skipped. The next run on commit `9e861d8` passed SDK setup but failed because
 `platforms;android-37` is unavailable in the stable channel. The owner approved
 installing `platforms;android-37.2` from channel 3 to preserve the existing
-compile SDK; `targetSdk` remains 36. A successful remote run is still required
-before R4 can be removed from the roadmap.
+compile SDK; `targetSdk` remains 36. GitHub Actions run
+[39110515698](https://github.com/arsindedetoulouse-tech/foliant-store/actions/runs/39110515698)
+on commit `83f35aa` passed Android SDK setup, unit tests, debug assembly, lint
+and strict OpenSpec validation.
 
-Independent code review found no blockers or major issue in workflow ordering,
-triggering or recorded status. The remote-run limitation remains unchanged.
+Initial independent code review found no blockers or major issue in workflow
+ordering, triggering or recorded status.
 
-Follow-up independent code review approved the package-selection fix. Independent
-security review found no confirmed vulnerability or blocker; version-tagged
-actions and external npm/SDK downloads remain supply-chain risks not verified
-for immutable provenance. That review covered the `platform-tools` correction,
-not the subsequently owner-approved Canary package selection. The workflow
-still requires independent review of that adjustment and a successful GitHub run.
+Follow-up independent code review approved both SDK setup adjustments.
+Independent security review of the Canary package selection found no confirmed
+vulnerability or blocker. Version-tagged actions and external npm/SDK downloads
+remain supply-chain risks not verified for immutable provenance.

@@ -23,21 +23,14 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 ## Current position
 
-- **R4 is in progress** in
-  [add-github-actions-gates](openspec/changes/add-github-actions-gates/proposal.md).
-  GitHub exposed SDK package availability issues; the owner approved installing
-  platform 37.2 from Canary, and the corrected run must pass before R4 is complete.
+- **R5 is planned:** product discovery may start; implementation waits for an
+  owner-approved product change with testable acceptance criteria.
 
 ## Plan
 
-Suggested order is R4 -> first product implementation.
-Dependencies below are explicit; the row order does not introduce additional
-dependencies. Product discovery in R5 may run in parallel with engineering work.
-
 | ID | Outcome | Status | Prerequisites | Completion evidence |
 |---|---|---|---|---|
-| R4 | Minimal automated gates | in_progress | Safe versioned baseline | Successful CI run verifies its agreed gate set. |
-| R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R4 | Owner-approved product change with testable acceptance criteria. |
+| R5 | Agreed first product slice | planned | Product discovery may start now | Owner-approved product change with testable acceptance criteria. |
 
 ## Status and maintenance protocol
 
