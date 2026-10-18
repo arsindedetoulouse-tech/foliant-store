@@ -11,12 +11,16 @@ import org.junit.jupiter.api.assertThrows
 private class FakeDataSource(
     private val remote: () -> HomeModel,
     private val local: () -> HomeModel? = { null },
+    private val save: (HomeModel) -> Unit = {},
 ) : HomeDataSource {
     var saved: HomeModel? = null
 
     override suspend fun loadLocal(): HomeModel? = local()
     override suspend fun loadRemote(): HomeModel = remote()
-    override suspend fun saveLocal(model: HomeModel) { saved = model }
+    override suspend fun saveLocal(model: HomeModel) {
+        save(model)
+        saved = model
+    }
 }
 
 class HomeRepositoryTest {
@@ -51,6 +55,20 @@ class HomeRepositoryTest {
         )
 
         assertEquals(HomeModel(id = "cached"), repository.load())
+    }
+
+    @Test
+    fun `repository returns fresh data when caching fails`() = runTest {
+        val fresh = HomeModel(id = "fresh")
+        val repository = HomeRepositoryImpl(
+            FakeDataSource(
+                remote = { fresh },
+                local = { HomeModel(id = "cached") },
+                save = { throw IllegalStateException("disk full") },
+            ),
+        )
+
+        assertEquals(fresh, repository.load())
     }
 
     @Test

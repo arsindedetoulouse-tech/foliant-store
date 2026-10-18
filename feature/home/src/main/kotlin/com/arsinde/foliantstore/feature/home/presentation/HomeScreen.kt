@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -34,54 +35,59 @@ fun HomeScreen(
     state: HomeState,
     onRefresh: () -> Unit,
 ) {
-    Column(
+    Surface(
         modifier = Modifier
             .fillMaxSize()
-            // The app draws edge to edge, so the screen has to keep its content clear of the
-            // status and navigation bars itself.
-            .safeDrawingPadding()
-            .padding(AppSpacing.large),
-        verticalArrangement = Arrangement.spacedBy(
-            AppSpacing.medium,
-            Alignment.CenterVertically,
-        ),
-        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(
-            text = stringResource(R.string.feature_home_title),
-            style = MaterialTheme.typography.headlineMedium,
-            textAlign = TextAlign.Center,
-        )
-
-        when {
-            state.isLoading -> CircularProgressIndicator()
-
-            state.error != null -> Text(
-                text = stringResource(R.string.feature_home_error),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.error,
-                textAlign = TextAlign.Center,
-            )
-
-            state.model != null -> Text(
-                text = state.model.id,
-                style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center,
-            )
-        }
-
-        Text(
-            text = stringResource(R.string.feature_home_hint),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = TextAlign.Center,
-        )
-
-        TextButton(
-            onClick = onRefresh,
-            enabled = !state.isLoading,
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                // The app draws edge to edge, so the screen has to keep its content clear of the
+                // status and navigation bars itself.
+                .safeDrawingPadding()
+                .padding(AppSpacing.large),
+            verticalArrangement = Arrangement.spacedBy(
+                AppSpacing.medium,
+                Alignment.CenterVertically,
+            ),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text(text = stringResource(R.string.feature_home_refresh))
+            Text(
+                text = stringResource(R.string.feature_home_title),
+                style = MaterialTheme.typography.headlineMedium,
+                textAlign = TextAlign.Center,
+            )
+
+            when {
+                state.isLoading -> CircularProgressIndicator()
+
+                state.error != null -> Text(
+                    text = stringResource(R.string.feature_home_error),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.error,
+                    textAlign = TextAlign.Center,
+                )
+
+                state.model != null -> Text(
+                    text = state.model.id,
+                    style = MaterialTheme.typography.bodyLarge,
+                    textAlign = TextAlign.Center,
+                )
+            }
+
+            Text(
+                text = stringResource(R.string.feature_home_hint),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
+            )
+
+            TextButton(
+                onClick = onRefresh,
+                enabled = !state.isLoading,
+            ) {
+                Text(text = stringResource(R.string.feature_home_refresh))
+            }
         }
     }
 }

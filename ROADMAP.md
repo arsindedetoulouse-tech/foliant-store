@@ -23,20 +23,19 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 ## Current position
 
-- The next outcomes are **R3** and **R4**. R3 needs an owner decision about
-  cache-write failure semantics; R4 can be planned independently.
+- The next outcome is **R4**. It can be planned independently; no CI baseline
+  change is active yet.
 
 ## Plan
 
-Suggested order is R3/R4 -> first product implementation.
+Suggested order is R4 -> first product implementation.
 Dependencies below are explicit; the row order does not introduce additional
 dependencies. Product discovery in R5 may run in parallel with engineering work.
 
 | ID | Outcome | Status | Prerequisites | Completion evidence |
 |---|---|---|---|---|
-| R3 | Correct Home demonstrator | planned | Safe versioned baseline | Focused changes meet their agreed acceptance criteria. |
 | R4 | Minimal automated gates | planned | Safe versioned baseline | Successful CI run verifies its agreed gate set. |
-| R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R3-R4 | Owner-approved product change with testable acceptance criteria. |
+| R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R4 | Owner-approved product change with testable acceptance criteria. |
 
 ## Status and maintenance protocol
 

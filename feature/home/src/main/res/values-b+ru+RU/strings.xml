@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_title">Добро пожаловать</string>
+    <string name="feature_home_refresh">Обновить</string>
+    <string name="feature_home_error">Не удалось загрузить данные.</string>
+    <string name="feature_home_hint">Значение ниже получено из встроенной демонстрационной модели. Потяните для обновления или нажмите «Обновить».</string>
+</resources>

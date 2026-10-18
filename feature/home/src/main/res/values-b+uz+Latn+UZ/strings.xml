@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_title">Xush kelibsiz</string>
+    <string name="feature_home_refresh">Yangilash</string>
+    <string name="feature_home_error">Ma’lumotlarni yuklab bo‘lmadi.</string>
+    <string name="feature_home_hint">Quyidagi qiymat ilova bilan birga berilgan namuna ma’lumotdan olinadi. Yangilash uchun pastga torting yoki «Yangilash» tugmasini bosing.</string>
+</resources>
