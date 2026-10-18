@@ -1,1 +1,1 @@
-# foliant-manager
+# foliant-store
