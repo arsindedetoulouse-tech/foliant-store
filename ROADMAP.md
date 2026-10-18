@@ -23,14 +23,15 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 ## Current position
 
-- **R5 is planned:** product discovery may start; implementation waits for an
-  owner-approved product change with testable acceptance criteria.
+- **R5 is in progress:** product discovery is defining the first slice.
+  [add-page-text-scanning](openspec/changes/add-page-text-scanning/proposal.md)
+  is awaiting agreed requirements and design before implementation.
 
 ## Plan
 
 | ID | Outcome | Status | Prerequisites | Completion evidence |
 |---|---|---|---|---|
-| R5 | Agreed first product slice | planned | Product discovery may start now | Owner-approved product change with testable acceptance criteria. |
+| R5 | Agreed first product slice | in_progress | Product discovery | Approved page-text-scanning change with testable acceptance criteria. |
 
 ## Status and maintenance protocol
 
