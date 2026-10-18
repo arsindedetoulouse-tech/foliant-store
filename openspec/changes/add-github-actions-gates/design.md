@@ -9,6 +9,9 @@ tests, debug assembly and lint. GitHub Actions is the owner-selected CI platform
 
 1. Trigger on push and pull request, with `contents: read` permissions only.
 2. Use Ubuntu runner, Java 21, Android SDK platform 37 and official setup actions.
+   Explicitly request only `platform-tools` from `setup-android`; its default
+   also requests the retired `tools` package and fails against the current SDK
+   repository.
 3. Run one Gradle command covering current unit-test modules, debug assembly and
    lint. Cache Gradle through the official Gradle action.
 4. Install exact OpenSpec CLI `1.13.2` through `npx` and run strict validation.
@@ -42,8 +45,16 @@ version-tagged third-party action references and the external npm package; the
 workflow has no secrets, uses exact OpenSpec package version and grants only
 `contents: read`.
 
-This repository has no configured remote, so no GitHub Actions run exists yet.
-Remote successful execution is required before R4 can be removed from the roadmap.
+The first GitHub run on commit `547a6fc` failed during Android SDK setup because
+the action default requested the retired `tools` package. All later gates were
+skipped. The workflow now requests only `platform-tools`; a successful remote
+run is still required before R4 can be removed from the roadmap.
 
 Independent code review found no blockers or major issue in workflow ordering,
 triggering or recorded status. The remote-run limitation remains unchanged.
+
+Follow-up independent code review approved the package-selection fix. Independent
+security review found no confirmed vulnerability or blocker; version-tagged
+actions and external npm/SDK downloads remain supply-chain risks not verified
+for immutable provenance. The corrected workflow still requires a successful
+GitHub run.

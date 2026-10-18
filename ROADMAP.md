@@ -25,6 +25,8 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 - **R4 is in progress** in
   [add-github-actions-gates](openspec/changes/add-github-actions-gates/proposal.md).
+  The first GitHub run exposed a retired SDK package default; the corrected run
+  must pass before R4 is complete.
 
 ## Plan
 
