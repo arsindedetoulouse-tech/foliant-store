@@ -23,22 +23,20 @@ of `tasks.md`. Replace obsolete rows rather than accumulating a completed-work l
 
 ## Current position
 
-- **R2 is in progress** in
-  [establish-safe-baseline](openspec/changes/establish-safe-baseline/proposal.md).
-  Owner approval is recorded; the initial commit and final verification remain.
+- The next outcomes are **R3** and **R4**. R3 needs an owner decision about
+  cache-write failure semantics; R4 can be planned independently.
 
 ## Plan
 
-Suggested order is R2 -> R3/R4 -> first product implementation.
+Suggested order is R3/R4 -> first product implementation.
 Dependencies below are explicit; the row order does not introduce additional
 dependencies. Product discovery in R5 may run in parallel with engineering work.
 
 | ID | Outcome | Status | Prerequisites | Completion evidence |
 |---|---|---|---|---|
-| R2 | Safe versioned baseline | in_progress | Green build baseline | Approved baseline commit and hygiene evidence. |
-| R3 | Correct Home demonstrator | planned | R2 | Focused changes meet their agreed acceptance criteria. |
-| R4 | Minimal automated gates | planned | R2 | Successful CI run verifies its agreed gate set. |
-| R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R2-R4 | Owner-approved product change with testable acceptance criteria. |
+| R3 | Correct Home demonstrator | planned | Safe versioned baseline | Focused changes meet their agreed acceptance criteria. |
+| R4 | Minimal automated gates | planned | Safe versioned baseline | Successful CI run verifies its agreed gate set. |
+| R5 | Agreed first product slice | planned | Product discovery may start now; implementation waits for R3-R4 | Owner-approved product change with testable acceptance criteria. |
 
 ## Status and maintenance protocol
 

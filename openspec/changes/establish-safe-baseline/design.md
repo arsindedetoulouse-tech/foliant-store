@@ -111,4 +111,24 @@ The proposed initial baseline is 111 non-ignored files:
 It excludes local/generated categories matched by `.gitignore`, including
 `local.properties`, IDE/Gradle/build outputs and the newly covered signing/private
 credential names. The owner approved this exact baseline scope; staging is
-complete, while commit and final verification remain.
+complete.
+
+## Completion Evidence
+
+After explicit owner approval, 111 reviewed non-ignored files were staged.
+The staged path review found no local configuration, generated output, signing or
+protected credential path; `git diff --cached --check` passed. Independent staged
+review found no baseline-scope blocker after its approval-status documentation
+finding was corrected.
+
+Initial baseline commit:
+
+```text
+f1c19ca110c868794b817919e5bc2ce171c860c5
+chore: establish safe baseline
+```
+
+The commit has the required Copilot co-author trailer. `git status --short` was
+empty immediately after it. R2 has been removed from the rolling roadmap; R3
+and R4 are the remaining next outcomes. This documentation update records the
+post-commit state and is separate from the initial baseline commit.
