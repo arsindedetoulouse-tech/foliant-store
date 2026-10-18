@@ -12,6 +12,9 @@ tests, debug assembly and lint. GitHub Actions is the owner-selected CI platform
    Explicitly request only `platform-tools` from `setup-android`; its default
    also requests the retired `tools` package and fails against the current SDK
    repository.
+   The project compiles against SDK 37, whose available package is currently
+   `platforms;android-37.2` in SDK channel 3 (Canary); install that exact package
+   without changing the app's `compileSdk = 37` or `targetSdk = 36`.
 3. Run one Gradle command covering current unit-test modules, debug assembly and
    lint. Cache Gradle through the official Gradle action.
 4. Install exact OpenSpec CLI `1.13.2` through `npx` and run strict validation.
@@ -47,8 +50,11 @@ workflow has no secrets, uses exact OpenSpec package version and grants only
 
 The first GitHub run on commit `547a6fc` failed during Android SDK setup because
 the action default requested the retired `tools` package. All later gates were
-skipped. The workflow now requests only `platform-tools`; a successful remote
-run is still required before R4 can be removed from the roadmap.
+skipped. The next run on commit `9e861d8` passed SDK setup but failed because
+`platforms;android-37` is unavailable in the stable channel. The owner approved
+installing `platforms;android-37.2` from channel 3 to preserve the existing
+compile SDK; `targetSdk` remains 36. A successful remote run is still required
+before R4 can be removed from the roadmap.
 
 Independent code review found no blockers or major issue in workflow ordering,
 triggering or recorded status. The remote-run limitation remains unchanged.
@@ -56,5 +62,6 @@ triggering or recorded status. The remote-run limitation remains unchanged.
 Follow-up independent code review approved the package-selection fix. Independent
 security review found no confirmed vulnerability or blocker; version-tagged
 actions and external npm/SDK downloads remain supply-chain risks not verified
-for immutable provenance. The corrected workflow still requires a successful
-GitHub run.
+for immutable provenance. That review covered the `platform-tools` correction,
+not the subsequently owner-approved Canary package selection. The workflow
+still requires independent review of that adjustment and a successful GitHub run.

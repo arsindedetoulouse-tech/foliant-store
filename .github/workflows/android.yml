@@ -20,7 +20,7 @@ jobs:
         with:
           packages: platform-tools
       - name: Install Android SDK platform
-        run: sdkmanager "platforms;android-37"
+        run: sdkmanager --channel=3 "platforms;android-37.2"
       - uses: gradle/actions/setup-gradle@v4
       - name: Test, assemble and lint
         run: >-

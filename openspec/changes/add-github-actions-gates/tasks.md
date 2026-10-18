@@ -10,4 +10,4 @@
 - [x] 2.1 Validate workflow structure and local Gradle/OpenSpec commands; record the initial GitHub setup failure in the design evidence.
 - [x] 2.2 Independently security-review workflow permissions, action usage and supply-chain exposure.
 - [x] 2.3 Independently review the change; update R4 only after review and remote-run status is accurately recorded.
-- [ ] 2.4 Avoid the retired default Android SDK `tools` package and verify a successful GitHub run.
+- [ ] 2.4 Install the owner-approved SDK 37.2 Canary package required by compileSdk 37 and verify a successful GitHub run.
